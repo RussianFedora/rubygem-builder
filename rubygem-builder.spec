@@ -30,7 +30,7 @@ XML Markup * XML Events
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%{gemdir}
 gem install --local --install-dir %{buildroot}%{gemdir} \
-            --force --rdoc %{SOURCE0}
+            --force --no-rdoc --no-ri %{SOURCE0}
 
 for file in `find %{buildroot}/%{geminstdir} -name "*.rb"`; do
     [ ! -z "`head -n 1 $file | grep \"^#!\"`" ] && chmod +x $file
@@ -50,13 +50,13 @@ rm -rf %{buildroot}
 %files
 %defattr(-, root, root, -)
 %{gemdir}/gems/%{gemname}-%{version}/
-%doc %{gemdir}/doc/%{gemname}-%{version}
+#_no_rdoc %doc %{gemdir}/doc/%{gemname}-%{version}
 %doc %{geminstdir}/CHANGES
 %doc %{geminstdir}/Rakefile
 %doc %{geminstdir}/README.md
-%doc %{geminstdir}/doc/releases/builder-1.2.4.rdoc
-%doc %{geminstdir}/doc/releases/builder-2.0.0.rdoc
-%doc %{geminstdir}/doc/releases/builder-2.1.1.rdoc
+#_no_rdoc %doc %{geminstdir}/doc/releases/builder-1.2.4.rdoc
+#_no_rdoc %doc %{geminstdir}/doc/releases/builder-2.0.0.rdoc
+#_no_rdoc %doc %{geminstdir}/doc/releases/builder-2.1.1.rdoc
 %{gemdir}/cache/%{gemname}-%{version}.gem
 %{gemdir}/specifications/%{gemname}-%{version}.gemspec
 
@@ -64,6 +64,7 @@ rm -rf %{buildroot}
 %changelog
 * Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.2.2-1
 - Rebuilt for new version
+- drop rdoc  
 
 * Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.1.2-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
