@@ -5,8 +5,8 @@
 
 Name:		rubygem-%{gemname}
 Summary: 	Builders for MarkUp
-Version: 	3.2.2
-Release: 	2%{?dist}
+Version: 	3.0.0
+Release: 	1%{?dist}
 Group: 		Development/Languages
 License: 	GPLv2+ or Ruby
 URL:        http://%{gemname}.rubyforge.org/
@@ -62,7 +62,7 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.2.2-1
+* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.0.0-1
 - Rebuilt for new version
 - drop rdoc  
 
