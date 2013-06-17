@@ -6,7 +6,7 @@
 Name:		rubygem-%{gemname}
 Summary: 	Builders for MarkUp
 Version: 	3.0.0
-Release: 	1%{?dist}
+Release: 	2%{?dist}
 Group: 		Development/Languages
 License: 	GPLv2+ or Ruby
 URL:        http://%{gemname}.rubyforge.org/
@@ -37,7 +37,7 @@ for file in `find %{buildroot}/%{geminstdir} -name "*.rb"`; do
 done
 
 # Convert README to utf8
-strings %{buildroot}/%{geminstdir}/README.md > %{buildroot}/%{geminstdir}/README.strings
+strings %{buildroot}/%{geminstdir}/README > %{buildroot}/%{geminstdir}/README.strings
 
 mv -f %{buildroot}/%{geminstdir}/README.strings %{buildroot}/%{geminstdir}/README.md
 
@@ -62,9 +62,10 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.0.0-1
+* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.0.0-2
 - Rebuilt for new version
-- drop rdoc  
+- drop rdoc
+- fix README.md
 
 * Wed Feb 09 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.1.2-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
