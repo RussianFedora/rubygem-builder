@@ -4,9 +4,10 @@
 %define geminstdir %{gemdir}/gems/%{gemname}-%{version}
 
 Name:		rubygem-%{gemname}
+Epoch:      1
 Summary: 	Builders for MarkUp
 Version: 	3.0.0
-Release: 	2%{?dist}
+Release: 	3%{?dist}
 Group: 		Development/Languages
 License: 	GPLv2+ or Ruby
 URL:        http://%{gemname}.rubyforge.org/
@@ -62,7 +63,7 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.0.0-2
+* Tue Jun 4 2013 Sergey Mihailov <sergey.mihailov@gpm.int> - 3.0.0-3
 - Rebuilt for new version
 - drop rdoc
 - fix README.md
